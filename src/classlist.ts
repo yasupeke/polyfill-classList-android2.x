@@ -1,5 +1,5 @@
 if (!(Element as any).classList) {
-    class ElementTokenList {
+    class DOMTokenList {
         private _elem: Element;
         private _classes: string[];
 
@@ -84,7 +84,7 @@ if (!(Element as any).classList) {
 
     Object.defineProperty(Element.prototype, 'classList', {
         get: function () {
-            return new ElementTokenList(this);
+            return new DOMTokenList(this);
         }
     })
 }
