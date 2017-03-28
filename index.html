@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        .default {
+            width: 100px;
+            height: 100px;
+            background: #000000;
+        }
+
+        .add {
+            background: #ff0000;
+        }
+
+        .toggle {
+            background: #ffff00;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="sample" class="default test1 test2"></div>
+
+    <div>
+        <button id="add">add</button>
+        <button id="remove">remove</button>
+        <button id="toggle">toggle</button>
+        <button id="toggleTrue">toggle true</button>
+        <button id="toggleFalse">toggle false</button>
+    </div>
+
+    <script src="./lib/classlist.js"></script>
+    <script>
+        (function () {
+            var elem = document.querySelector('#sample');
+            var btnAdd = document.querySelector('#add');
+            var btnRemove = document.querySelector('#remove');
+            var btnToggle = document.querySelector('#toggle');
+            var toggleTrue = document.querySelector('#toggleTrue');
+            var toggleFalse = document.querySelector('#toggleFalse');
+            console.log(elem.classList);
+            console.log(elem.classList.item(0));
+            console.log(elem.classList.item(1));
+            console.log(elem.classList.toString());
+            console.log(elem.classList.length);
+            console.log(elem.classList.contains('test1'));
+            console.log(elem.classList.contains('test3'));
+
+            btnAdd.addEventListener('click', function() {
+                elem.classList.add('add');
+            }, false);
+
+            btnRemove.addEventListener('click', function() {
+                elem.classList.remove('add');
+            }, false);
+
+            btnToggle.addEventListener('click', function() {
+                elem.classList.toggle('toggle');
+            }, false);
+
+            toggleTrue.addEventListener('click', function() {
+                elem.classList.toggle('toggle', true);
+            }, false);
+
+            toggleFalse.addEventListener('click', function() {
+                elem.classList.toggle('toggle', false);
+            }, false);
+        })();
+    </script>
+</body>
+
+</html>
