@@ -1,4 +1,4 @@
-if (!(Element as any).classList) {
+if (!Element.prototype.hasOwnProperty('classList')) {
     class DOMTokenList {
         private _elem: Element;
         private _classes: string[];
